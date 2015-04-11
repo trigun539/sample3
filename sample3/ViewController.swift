@@ -38,8 +38,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.theLabel.text = "Login"
-        self.usernameField.text = "Username"
-        self.passwordField.text = "Password"
+        self.usernameField.attributedPlaceholder = NSAttributedString(string:"Username",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
+        self.passwordField.attributedPlaceholder = NSAttributedString(string:"Password",
+            attributes:[NSForegroundColorAttributeName: UIColor.grayColor()])
+        self.passwordField.secureTextEntry = true
         self.loginBtn.setTitle("Login", forState: UIControlState.Normal)
         self.forgotPasswordBtn.setTitle("Forgot Password", forState: UIControlState.Normal)
         self.view.backgroundColor = UIColorFromHex(0xA1E8D9)
